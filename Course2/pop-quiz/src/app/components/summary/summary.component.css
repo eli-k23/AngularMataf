@@ -1,0 +1,23 @@
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+li.correct {
+  background-color: rgba(32, 155, 28, 0.355);
+}
+
+li.wrong {
+  background-color: rgba(155, 28, 34, 0.355);
+}

@@ -1,0 +1,11 @@
+<ul>
+  <li
+    *ngFor="let item of filter(allQuiz)"
+    [class.correct]="item.userAnswer === item.correctAnswer"
+    [class.wrong]="item.userAnswer !== item.correctAnswer"
+  >
+    {{ item.caption }} <br />
+    user answer : {{ item.answers[item.userAnswer] }} <br />
+    correct answer : {{ item.answers[item.correctAnswer] }}
+  </li>
+</ul>

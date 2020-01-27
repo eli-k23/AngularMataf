@@ -1,0 +1,10 @@
+:host {
+  display: grid;
+}
+
+p {
+  text-align: center;
+  justify-content: center;
+  font-size: 27px;
+  color: royalblue;
+}

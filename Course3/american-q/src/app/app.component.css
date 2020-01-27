@@ -1,0 +1,46 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr; /* or 1fr 1fr 1fr */
+  grid-template-rows: auto 1fr;
+}
+
+section.question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+section.answers {
+  display: grid;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  margin: 4px;
+  border: 1px solid lightblue;
+  padding: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+}
+
+li:hover {
+}
+
+li.chosen {
+}
+
+.wrong {
+  background-color: rgba(165, 42, 42, 0.466);
+}
+
+.succsess {
+  background-color: rgba(218, 221, 37, 0.466);
+}

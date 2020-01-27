@@ -1,0 +1,11 @@
+<div class="caption-area">{{ quiz.caption }}</div>
+<div class="answers-area">
+  <ul>
+    <li
+      *ngFor="let item of quiz.answers; let ind = index"
+      (click)="onSelect(ind)"
+    >
+      {{ letters[ind] }}. {{ item }}
+    </li>
+  </ul>
+</div>

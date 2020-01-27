@@ -1,0 +1,12 @@
+<div class="title-area">
+  <ng-content select=".app-expander-title"></ng-content>
+</div>
+<div>
+  <button (click)="setExpender()">
+    <span *ngIf="isExtended">-</span>
+    <span *ngIf="!isExtended">+</span>
+  </button>
+  <div *ngIf="isExtended">
+    <ng-content select=".app-expander-content"></ng-content>
+  </div>
+</div>

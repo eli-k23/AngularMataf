@@ -1,0 +1,20 @@
+<section class="question">
+  {{ question }}
+</section>
+<section class="answers">
+  <ul>
+    <li
+      *ngFor="let item of answers; let ind = index"
+      (click)="setAnswer(item.code)"
+      [class.wrong]="
+        item.code !== correctAnswer &&
+        userClicked &&
+        selectedAnswer === item.code
+      "
+      [class.succsess]="item.code === correctAnswer && userClicked"
+    >
+      {{ item.desc }}
+    </li>
+  </ul>
+</section>
+<section class="correctAnswers"></section>

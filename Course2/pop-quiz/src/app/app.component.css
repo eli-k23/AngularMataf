@@ -1,0 +1,22 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-template-rows: auto 1fr;
+}
+
+.title-area {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-area {
+  display: grid;
+}
+
+.summary-area {
+  display: flex;
+  flex-direction: column;
+}

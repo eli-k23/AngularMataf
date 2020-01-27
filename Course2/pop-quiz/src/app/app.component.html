@@ -1,0 +1,19 @@
+<section class="title-area">
+  <div>
+    <h1>Eli Kadosh popup quiz</h1>
+  </div>
+</section>
+<section class="main-area">
+  <div *ngIf="currentQuiz !== null">
+    <app-question-presenter
+      [quiz]="currentQuiz"
+      (userAnsweredQuestion)="saveUserAnswer($event)"
+    ></app-question-presenter>
+  </div>
+  <div *ngIf="currentQuiz === null">
+    <app-quiz-over [allQuiz]="quizData"></app-quiz-over>
+  </div>
+</section>
+<section class="summary-area">
+  <app-summary [allQuiz]="quizData"></app-summary>
+</section>
