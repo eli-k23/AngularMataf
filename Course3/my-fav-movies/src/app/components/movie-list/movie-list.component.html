@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let movie of Movies; let ind = index" (click)="setIndex(ind)">
+    {{ movie.caption }}
+  </li>
+</ul>
