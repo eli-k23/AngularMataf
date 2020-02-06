@@ -10,7 +10,7 @@ export class MovieDBService {
   constructor(private http: HttpClient) {}
 
   movieDB: Movie[] = [];
-  private _jsonURL = "assets/db.json";
+  private _jsonURL = "http://www.omdbapi.com/?s=iron%20man&apikey=d2286d0d";
 
   private selectedMovie: Movie | null = null;
   private selectedMovie$ = new BehaviorSubject(this.selectedMovie);
@@ -27,14 +27,13 @@ export class MovieDBService {
   private async createDB() {
     await this.getJSON().subscribe(data => {
       console.log(data);
-      data.MovieDB.map(item =>
-        this.movieDB.push(new Movie(item.caption, item.desc, item.poster))
+      data.Search.map(item =>
+        this.movieDB.push(new Movie(item.Title, item.imdbID, item.Poster))
       );
     });
   }
 
   public getJSON(): Observable<any> {
-    console.log("in");
     return this.http.get(this._jsonURL);
   }
   private delay(): Promise<void> {

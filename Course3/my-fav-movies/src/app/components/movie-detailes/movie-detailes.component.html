@@ -1,3 +1,4 @@
 <div *ngIf="movie !== null">
-  {{ movie.caption }} - {{ movie.destination }} -- {{ movie.poster }}
+  {{ movie.caption }} - {{ movie.destination }}
+  <img [src]="movie.poster" />
 </div>
