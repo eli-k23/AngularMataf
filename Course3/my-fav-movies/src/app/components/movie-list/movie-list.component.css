@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+}
+
+ul {
+}
+
+li {
+  list-style: none;
+  border-bottom: 1px solid blueviolet;
+}
+
+li:hover {
+  border-bottom: 2px solid blueviolet;
+  cursor: pointer;
+}

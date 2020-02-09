@@ -1,4 +1,5 @@
-<div *ngIf="movie !== null">
-  {{ movie.caption }} - {{ movie.destination }}
-  <img [src]="movie.poster" />
+<div *ngIf="movie !== null && imdb !== null" class="main-area">
+  <div class="caption-area">{{ movie.caption }} - {{ imdb.Year }}</div>
+  <div class="desc-area">{{ imdb.Plot }}</div>
+  <div class="poster-area"><img [src]="movie.poster" /></div>
 </div>

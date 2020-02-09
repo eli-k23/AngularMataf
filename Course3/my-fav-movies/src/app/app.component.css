@@ -1,0 +1,26 @@
+:host {
+  display: grid;
+  grid-template: 10% 1fr / 30% 1fr;
+}
+
+.title-area {
+  grid-column: span 2;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.list-area {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+}
+
+.descq-area {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+}
