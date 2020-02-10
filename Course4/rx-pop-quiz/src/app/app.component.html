@@ -1,0 +1,19 @@
+<div *ngIf="question$ | async as popQuiz">
+  {{ popQuiz.title }}
+  <ul>
+    <li
+      *ngFor="let answer of popQuiz.answers; let answerID = index"
+      (click)="setUserAnswer(answerID)"
+    >
+      {{ answer }}
+    </li>
+  </ul>
+  {{ popQuiz.answers }}
+</div>
+
+<div *ngFor="let item of questions">{{ item.answers }}</div>
+
+<div *ngIf="userAnswers$ | async as userAnswer">
+  userAnswer :
+  <div *ngFor="let item of userAnswer">{{ item }}</div>
+</div>
