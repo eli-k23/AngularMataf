@@ -23,7 +23,7 @@ export class StateService {
   }
 
   private isBusy: boolean[] = [];
-  private isBusy$ = new BehaviorSubject<boolean[]>(this.userAnswers);
+  private isBusy$ = new BehaviorSubject<boolean[]>(this.isBusy);
 
   // setUserAnswer(answer: number) {
   //   this.userAnswers.push(answer);
