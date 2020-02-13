@@ -1,0 +1,18 @@
+<div *ngIf="question$ | async as popQuiz">
+  <div class="questionTitle">{{ popQuiz.title }}</div>
+  <ul>
+    <li
+      *ngFor="let answer of popQuiz.answers; let answerID = index"
+      (click)="setUserAnswer(popQuiz, answerID)"
+    >
+      {{ answer }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="isBusy">
+  <div class="loader-back"></div>
+  <div class="uploader">
+    <div class="loader"></div>
+  </div>
+</div>

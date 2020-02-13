@@ -22,15 +22,29 @@ export class StateService {
     return this.selectedQuestionIndex$.asObservable();
   }
 
-  private userAnswers: number[] = [];
-  private userAnswers$ = new BehaviorSubject<number[]>(this.userAnswers);
+  private isBusy: boolean[] = [];
+  private isBusy$ = new BehaviorSubject<boolean[]>(this.userAnswers);
 
-  setUserAnswer(answer: number) {
-    this.userAnswers.push(answer);
-    this.userAnswers$.next(this.userAnswers);
+  // setUserAnswer(answer: number) {
+  //   this.userAnswers.push(answer);
+  //   this.userAnswers$.next(this.userAnswers);
+  // }
+
+  // getUserAnswers(): Observable<number[]> {
+  //   return this.userAnswers$.asObservable();
+  // }
+
+  private completedQuestions: PopQuiz[] = [];
+  private completedQuestions$ = new BehaviorSubject<PopQuiz[]>(
+    this.completedQuestions
+  );
+
+  setNextCompletedQuestions(answer: PopQuiz) {
+    this.completedQuestions.push(answer);
+    this.completedQuestions$.next(this.completedQuestions);
   }
 
-  getUserAnswers(): Observable<number[]> {
-    return this.userAnswers$.asObservable();
+  getCompletedQuestions(): Observable<PopQuiz[]> {
+    return this.completedQuestions$.asObservable();
   }
 }

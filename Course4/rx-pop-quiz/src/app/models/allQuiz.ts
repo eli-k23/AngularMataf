@@ -18,5 +18,17 @@ export const ALL_QUESTIONS: PopQuiz[] = [
     answers: ["30", "63", "36", "9"],
     userAnswer: null,
     correctAnswer: 2
+  },
+  {
+    title: "33 + '3'",
+    answers: ["333", "63", "36", "9"],
+    userAnswer: null,
+    correctAnswer: 0
+  },
+  {
+    title: "23 ? ",
+    answers: ["EK", "MJ", "LJ", "ALL"],
+    userAnswer: null,
+    correctAnswer: 3
   }
 ];

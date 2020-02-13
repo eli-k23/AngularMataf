@@ -6,20 +6,20 @@ import { ALL_QUESTIONS } from "../models/allQuiz";
   providedIn: "root"
 })
 export class DataService {
-  questions: PopQuiz[] = [];
-
   private delay(millis: number): Promise<void> {
     return new Promise<void>(resolve => setTimeout(resolve, millis));
   }
 
   async getAllQuestion(): Promise<PopQuiz[]> {
     await this.delay(500);
-    if (this.questions.length === 0) this.questions = [...ALL_QUESTIONS];
-    return this.questions;
+    const questions = [...ALL_QUESTIONS];
+
+    return questions;
   }
 
   async getCurrentQuestion(index: number): Promise<PopQuiz> {
     await this.delay(500);
-    return this.questions.length === index ? null : this.questions[index];
+    const questions = [...ALL_QUESTIONS];
+    return questions.length === index ? null : questions[index];
   }
 }

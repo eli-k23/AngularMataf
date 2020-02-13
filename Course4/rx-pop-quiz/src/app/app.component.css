@@ -1,0 +1,28 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-template-rows: 10% 1fr;
+}
+
+.title-area {
+  grid-column: span 2;
+  border: 1px solid navy;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+.question-area {
+  border: 1px solid navy;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.summary-area {
+  border: 1px solid navy;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+}

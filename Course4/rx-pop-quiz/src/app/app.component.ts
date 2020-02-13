@@ -13,10 +13,7 @@ import { PopQuiz } from "./models/popQuiz";
 export class AppComponent implements OnInit {
   title = "rx-pop-quiz";
 
-  currentQuestionIndex$: Observable<number>;
-  questions: PopQuiz[] = [];
   question$: Observable<PopQuiz>;
-  userAnswers$: Observable<number[]>;
 
   constructor(private data: DataService, private state: StateService) {}
 
@@ -25,17 +22,9 @@ export class AppComponent implements OnInit {
     return item;
   }
 
-  async ngOnInit() {
-    this.questions = await this.data.getAllQuestion();
+  ngOnInit() {
     this.question$ = this.state
       .getCurrtQuestion()
       .pipe(switchMap(index => this.data.getCurrentQuestion(index)));
-
-    this.userAnswers$ = this.state.getUserAnswers();
-  }
-
-  setUserAnswer(userAnswer: number) {
-    this.state.setUserAnswer(userAnswer);
-    this.state.setNextQuestion();
   }
 }
