@@ -15,9 +15,9 @@ export class QuizPresenterComponent implements OnInit {
   question$: Observable<PopQuiz>;
   isBusy: boolean = false;
 
-  ngOnInit() {
+  async ngOnInit() {
     this.isBusy = true;
-    this.question$ = this.state
+    this.question$ = await this.state
       .getCurrtQuestion()
       .pipe(switchMap(index => this.data.getCurrentQuestion(index)));
     this.isBusy = false;

@@ -18,7 +18,7 @@ export class DataService {
   }
 
   async getCurrentQuestion(index: number): Promise<PopQuiz> {
-    await this.delay(500);
+    await this.delay(1500);
     const questions = [...ALL_QUESTIONS];
     return questions.length === index ? null : questions[index];
   }

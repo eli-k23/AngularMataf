@@ -1,0 +1,9 @@
+<div *ngIf="questionsAnswer$ | async as questionsAnswer">
+  <div
+    *ngFor="let que of questionsAnswer"
+    [class.correct]="que.correctAnswer === que.userAnswer"
+    [class.wrong]="que.correctAnswer !== que.userAnswer"
+  >
+    {{ que.caption }} = {{ que.answers[que.correctAnswer] }}
+  </div>
+</div>

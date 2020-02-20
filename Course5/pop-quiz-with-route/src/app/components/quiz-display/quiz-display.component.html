@@ -1,0 +1,14 @@
+<div *ngIf="question$ | async as current">
+  <div class="question-title">{{ current.caption }}</div>
+  <ul>
+    <li
+      *ngFor="let item of current.answers; let i = index"
+      (click)="selectAnswer(current, i)"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>
+<div *ngIf="!(question$ | async)">
+  <app-quiz-end></app-quiz-end>
+</div>

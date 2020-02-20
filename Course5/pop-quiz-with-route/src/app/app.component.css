@@ -1,0 +1,9 @@
+:host {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 1fr 30%;
+}
+
+.title-area {
+  grid-column: span 2;
+}
