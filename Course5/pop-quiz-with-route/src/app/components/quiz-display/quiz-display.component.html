@@ -1,4 +1,4 @@
-<div *ngIf="question$ | async as current">
+<div *ngIf="question$ | async as current" class="data-area">
   <div class="question-title">{{ current.caption }}</div>
   <ul>
     <li
@@ -9,6 +9,12 @@
     </li>
   </ul>
 </div>
-<div *ngIf="!(question$ | async)">
+
+<div *ngIf="isLastQuestion$ | async">
   <app-quiz-end></app-quiz-end>
+  {{ question$ | async | json }} {{ isLastQuestion$ | async | json }}
 </div>
+
+<app-spinner
+  [isVisible]="!(question$ | async) && !(isLastQuestion$ | async)"
+></app-spinner>

@@ -13,6 +13,8 @@ import { StateService } from "src/app/core/services/state.service";
 })
 export class QuizDisplayComponent implements OnInit {
   question$: Observable<Question>;
+  isLastQuestion$: Observable<boolean>;
+  userAnswer: number | null = null;
 
   constructor(
     private state: StateService,
@@ -22,16 +24,26 @@ export class QuizDisplayComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.question$ = this.route.params.pipe(
-      map(prm => Number(prm["index"])),
+    let index$: Observable<number> = this.route.params.pipe(
+      map(prm => Number(prm["index"]))
+    );
+
+    this.question$ = index$.pipe(
       switchMap(index => this.data.getQuestionByIndex(index))
+    );
+
+    this.isLastQuestion$ = index$.pipe(
+      switchMap(currIndex => this.data.isLastIndex(currIndex))
     );
   }
 
   selectAnswer(currentQuestion: Question, userAnswer: number) {
-    currentQuestion.userAnswer = userAnswer;
-    this.state.saveNextQuestion(currentQuestion);
-    let currIndex: number = Number(this.route.snapshot.params["index"]) + 1;
-    this.router.navigate([currIndex]);
+    if (currentQuestion.userAnswer === null) {
+      currentQuestion.userAnswer = userAnswer;
+      this.state.saveNextQuestion(currentQuestion);
+      let currIndex: number = Number(this.route.snapshot.params["index"]) + 1;
+
+      this.router.navigate([currIndex]);
+    }
   }
 }

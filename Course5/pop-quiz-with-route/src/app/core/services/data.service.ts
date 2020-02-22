@@ -22,4 +22,9 @@ export class DataService {
     if (ALL_QUESTION.length <= index) return null;
     return ALL_QUESTION[index];
   }
+
+  async isLastIndex(currIndex: number): Promise<boolean> {
+    await this.delay(2000);
+    return ALL_QUESTION.length === currIndex;
+  }
 }
