@@ -1,5 +1,6 @@
 <div *ngIf="questionsAnswer$ | async as questionsAnswer">
   <div
+    class="summary-area"
     *ngFor="let que of questionsAnswer"
     [class.correct]="que.correctAnswer === que.userAnswer"
     [class.wrong]="que.correctAnswer !== que.userAnswer"

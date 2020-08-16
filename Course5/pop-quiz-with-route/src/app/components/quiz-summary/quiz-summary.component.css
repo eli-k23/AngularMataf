@@ -1,0 +1,23 @@
+:host {
+  display: grid;
+}
+
+.summary-area {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid var(--p700);
+}
+
+.correct {
+  background-color: var(--p300);
+  color: var(--p900);
+}
+
+.wrong {
+  background-color: var(--r300);
+  color: var(--r900);
+}

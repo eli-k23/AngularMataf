@@ -1,0 +1,7 @@
+<form novalidate [formGroup]="form">
+  <input type="text" formControlName="username" />
+  <input type="text" formControlName="fullName" />
+  <input type="text" formControlName="email" />
+
+  <button [disabled]="form.invalid">save</button>
+</form>
